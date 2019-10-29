@@ -11,7 +11,11 @@
 ### Project structure:
 <img src='https://i.imgur.com/4ScTvvt.png' width="300">
 
+### Firestore design
+<img src='https://i.imgur.com/7G2V0DV.png' width="600">
+
 ### Features:
+
 * Create/Edit/Delete Board Game
 
 <img src='https://i.imgur.com/IRZWMPk.png' width="600">
