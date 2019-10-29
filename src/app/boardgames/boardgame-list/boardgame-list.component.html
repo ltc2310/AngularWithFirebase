@@ -1,0 +1,23 @@
+<table class="table">
+  <thead class="thead-light">
+    <th>Name</th>
+    <th>Description</th>
+    <th>Image</th>
+    <th></th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let game of list">
+      <td (click)="onEdit(game)">{{game.name}}</td>
+      <td (click)="onEdit(game)">{{game.description}}</td>
+      <td (click)="onEdit(game)">
+        <img src={{game.imageUrl}} class="rounded mx-auto d-block" width="150" height="150" />
+      </td>
+      <td>
+        <a class="btn text-danger" (click)="onDelete(game.id)">
+          <i class="fa fa-trash">
+          </i>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
