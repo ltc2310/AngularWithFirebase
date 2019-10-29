@@ -1,7 +1,7 @@
 # Angular 8 vs Firebase
 
 ### Description:
-* An Example manage board game using Angular 8 and Firebase
+* An Example manages board games using Angular 8 and Firebase
 * CRUD board game
 
 ### Technical Skill:
