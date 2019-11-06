@@ -4,6 +4,10 @@ import { NgForm } from '@angular/forms';
 import { AngularFirestore } from '@angular/fire/firestore';
 import { ToastrService } from 'ngx-toastr';
 
+export const imageUrlRegex = RegExp(/(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|gif|png)/);
+
+export const defaultImageUrl = 'http://hstatic.net/363/1000016363/10/2016/5-11/boardgames.jpg';
+
 @Component({
   selector: 'app-boardgame',
   templateUrl: './boardgame.component.html',
@@ -31,8 +35,16 @@ export class BoardgameComponent implements OnInit {
     };
   }
 
+  getImageUrl = (imageUrl: string) => {
+    if (imageUrlRegex.test(imageUrl)) {
+      return imageUrl;
+    }
+    return defaultImageUrl;
+  }
+
   onSubmit(form: NgForm) {
-    const data = Object.assign({}, form.value);
+    const normalizeImageUrl = this.getImageUrl(form.value.imageUrl);
+    const data = { ...form.value, imageUrl: normalizeImageUrl };
     delete data.id;
     if (form.value.id == null) {
       this.firestore.collection('boardgames').add(data);

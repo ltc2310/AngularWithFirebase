@@ -14,3 +14,7 @@ table.table tbody tr:hover {
     cursor: pointer;
     background-color: #faf8eb;
 }
+
+.row {
+    margin-top: 20px;
+}
